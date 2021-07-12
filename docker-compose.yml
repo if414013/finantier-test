@@ -1,0 +1,55 @@
+version: "2.1"
+
+services:
+
+  stock-service:
+    container_name: stock-service
+    build:
+      context: ./stock-service
+      dockerfile: Dockerfile
+    volumes:
+      - .:/stock-service
+    ports:
+      - "8080:8080"
+    networks:
+      local:
+        ipv4_address: 192.168.224.4
+
+    depends_on:
+      - auth-service
+      - encryption-service
+
+  auth-service:
+    container_name: auth-service
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    volumes:
+      - .:/auth-service
+    ports:
+      - "9090:9090"
+    networks:
+      local:
+        ipv4_address: 192.168.224.2
+
+  encryption-service:
+    container_name: encryption-service
+    build:
+      context: ./encryption-service
+      dockerfile: Dockerfile
+    volumes:
+      - .:/encryption-service
+    ports:
+      - "7070:7070"
+    networks:
+      local:
+        ipv4_address: 192.168.224.3
+
+networks:
+  local:
+    name: local
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.224.0/20
+          gateway: 192.168.224.1

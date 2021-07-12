@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "4fbb1939-1811-4879-92d5-ff9ce9ba16d6",
+		"name": "Finantier Tech Assesment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Stock Info by Symbol",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/symbol/TSLA"
+			},
+			"response": []
+		},
+		{
+			"name": "Encrypt Stock Info",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": " application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": " application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"symbol\": \"TSLA\",\n    \"timestamp\": \"2021-07-09 20:00:00\",\n    \"open\": \"655.7800\",\n    \"high\": \"655.7800\",\n    \"low\": \"655.7800\",\n    \"close\": \"655.7800\",\n    \"volume\": \"655.7800\"\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": "http://localhost:7070/encrypt"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9090/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/authenticate?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVSASASASASAJjbGllbnQiOiJHdWVzdCBVc2VyIiwiZXhwIjoxNjI2MDI3ODQ1fQ.Z2jZyW5W4ntYhphJSyjPYuHHIoM47N7wuXIvfHRkI-c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"authenticate"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVSASASASASAJjbGllbnQiOiJHdWVzdCBVc2VyIiwiZXhwIjoxNjI2MDI3ODQ1fQ.Z2jZyW5W4ntYhphJSyjPYuHHIoM47N7wuXIvfHRkI-c"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
