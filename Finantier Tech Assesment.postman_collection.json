@@ -8,8 +8,17 @@
 		{
 			"name": "Get Stock Info by Symbol",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJjbGllbnQiOiJHdWVzdCBVc2VyIiwiZXhwIjoxNjI2MDUwNjgzfQ.JcYMwdbHmFExqbyj6BxYt8IZzqGSvnTpkFPdwCU0dhA",
+						"type": "text"
+					}
+				],
 				"url": "http://localhost:8080/symbol/TSLA"
 			},
 			"response": []
@@ -32,7 +41,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"symbol\": \"TSLA\",\n    \"timestamp\": \"2021-07-09 20:00:00\",\n    \"open\": \"655.7800\",\n    \"high\": \"655.7800\",\n    \"low\": \"655.7800\",\n    \"close\": \"655.7800\",\n    \"volume\": \"655.7800\"\n}",
+					"raw": "{\n    \"symbol\": \"TSLA\",\n    \"timestamp\": \"2021-07-09 20:00:00\",\n    \"open\": \"6dsd55.7800\",\n    \"high\": \"65dsd5.7800\",\n    \"low\": \"655dsd.7800\",\n    \"close\": \"655.7800\",\n    \"volume\": \"655.7800\"\n}",
 					"options": {
 						"raw": {
 							"language": "text"
@@ -55,10 +64,13 @@
 		{
 			"name": "Authenticate",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9090/authenticate?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVSASASASASAJjbGllbnQiOiJHdWVzdCBVc2VyIiwiZXhwIjoxNjI2MDI3ODQ1fQ.Z2jZyW5W4ntYhphJSyjPYuHHIoM47N7wuXIvfHRkI-c",
+					"raw": "http://localhost:9090/authenticate?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJjbGllbnQiOiJHdWVzdCBVc2VyIiwiZXhwIjoxNjI2MDMxNDc1fQ.srdwxgMrtfbvFPWppZt-Y1ROH-GSLD-GkCT2h7VHlD8",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -70,7 +82,7 @@
 					"query": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVSASASASASAJjbGllbnQiOiJHdWVzdCBVc2VyIiwiZXhwIjoxNjI2MDI3ODQ1fQ.Z2jZyW5W4ntYhphJSyjPYuHHIoM47N7wuXIvfHRkI-c"
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJjbGllbnQiOiJHdWVzdCBVc2VyIiwiZXhwIjoxNjI2MDMxNDc1fQ.srdwxgMrtfbvFPWppZt-Y1ROH-GSLD-GkCT2h7VHlD8"
 						}
 					]
 				}
