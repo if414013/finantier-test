@@ -1,6 +1,7 @@
 # Simple Stock Info Retrieval Microservices
 Notes : 
     - Really sorry if I don't implement TDD, the timeline to tight, only have 1 days :(
+    - Really sorry if I don't implement common git flow, the timeline to tight, only have 1 days :(
     - I implement encrypt in fields level
     - Need to generate token first before calling getStockInfoAPI
     - Token will be expired after 10 minutes
